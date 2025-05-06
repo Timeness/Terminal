@@ -9,8 +9,9 @@
 <body class="bg-black text-white flex items-center justify-center min-h-screen">
   <div class="bg-gray-800 p-6 rounded-xl max-w-xl w-full space-y-4">
     <h1 class="text-xl font-bold text-center">Python Eval Panel</h1>
-    <!--
-    <div id="telegramLogin" class="text-center">
+    
+    <!-- Telegram Login Disabled -->
+    <!-- <div id="telegramLogin" class="text-center">
       <script async src="https://telegram.org/js/telegram-widget.js?7"
               data-telegram-login="ViaMsgBot" 
               data-size="large"
@@ -20,10 +21,8 @@
               data-userpic="false"
               onlogin="onTelegramAuth(user)">
       </script>
-    -->
-      <p class="mt-2 text-sm text-red-400" id="loginMsg"></p>
-    </div>
-
+    </div> -->
+    
     <div id="evalSection" class="hidden">
       <textarea id="codeInput" rows="6"
                 class="w-full p-2 rounded bg-gray-700 text-white resize-none"
@@ -37,22 +36,22 @@
   </div>
 
   <script>
-    function onTelegramAuth(user) {
-      fetch('/auth-telegram', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ user })
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data.allowed) {
-          // document.getElementById('telegramLogin').classList.add('hidden');
-          document.getElementById('evalSection').classList.remove('hidden');
-        } else {
-          document.getElementById('loginMsg').innerText = "Access Denied";
-        }
-      });
-    }
+    // function onTelegramAuth(user) {
+    //   fetch('/auth-telegram', {
+    //     method: 'POST',
+    //     headers: {'Content-Type': 'application/json'},
+    //     body: JSON.stringify({ user })
+    //   })
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     if (data.allowed) {
+    //       document.getElementById('telegramLogin').classList.add('hidden');
+    //       document.getElementById('evalSection').classList.remove('hidden');
+    //     } else {
+    //       document.getElementById('loginMsg').innerText = "Access Denied";
+    //     }
+    //   });
+    // }
 
     function sendCode() {
       const code = document.getElementById('codeInput').value;
