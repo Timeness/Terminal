@@ -12,7 +12,7 @@ CORS(app)
 
 allowed_users = ["6505111743", "6517565595", "5896960462", "5220416927"]  # allowed Telegram user IDs
 
-logging.basicConfig(filename='access_log.txt', level=logging.INFO)
+# logging.basicConfig(filename='access_log.txt', level=logging.INFO)
 
 @app.route('/')
 def index():
@@ -25,7 +25,7 @@ def telegram_auth():
 
     ip = request.remote_addr
     ua = request.headers.get('User-Agent')
-    logging.info(f"[LOGIN] User: {user.get('id')} | IP: {ip} | UA: {ua}")
+    # logging.info(f"[LOGIN] User: {user.get('id')} | IP: {ip} | UA: {ua}")
 
     session['user_id'] = str(user.get('id'))
     allowed = str(user.get('id')) in allowed_users
