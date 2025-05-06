@@ -33,8 +33,8 @@ def telegram_auth():
 
 @app.route('/eval', methods=['POST'])
 def eval_code():
-    if 'user_id' not in session or session['user_id'] not in allowed_users:
-        return jsonify({"result": "Unauthorized"})
+    #if 'user_id' not in session or session['user_id'] not in allowed_users:
+        #return jsonify({"result": "Unauthorized"})
 
     code = request.json.get('code')
     stdout = io.StringIO()
