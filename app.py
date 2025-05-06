@@ -45,6 +45,3 @@ def eval_code():
     except Exception:
         result = traceback.format_exc()
     return jsonify({"result": result})
-
-if __name__ == '__main__':
-    app.run(debug=True)
