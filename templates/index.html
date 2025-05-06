@@ -9,7 +9,7 @@
 <body class="bg-black text-white flex items-center justify-center min-h-screen">
   <div class="bg-gray-800 p-6 rounded-xl max-w-xl w-full space-y-4">
     <h1 class="text-xl font-bold text-center">Python Eval Panel</h1>
-
+    <!--
     <div id="telegramLogin" class="text-center">
       <script async src="https://telegram.org/js/telegram-widget.js?7"
               data-telegram-login="ViaMsgBot" 
@@ -20,6 +20,7 @@
               data-userpic="false"
               onlogin="onTelegramAuth(user)">
       </script>
+    -->
       <p class="mt-2 text-sm text-red-400" id="loginMsg"></p>
     </div>
 
@@ -45,7 +46,7 @@
       .then(res => res.json())
       .then(data => {
         if (data.allowed) {
-          document.getElementById('telegramLogin').classList.add('hidden');
+          // document.getElementById('telegramLogin').classList.add('hidden');
           document.getElementById('evalSection').classList.remove('hidden');
         } else {
           document.getElementById('loginMsg').innerText = "Access Denied";
